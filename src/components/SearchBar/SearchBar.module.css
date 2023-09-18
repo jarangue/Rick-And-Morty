@@ -1,0 +1,75 @@
+.navBar{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    /* background-color: red; */
+    /* width: 50px;
+    height: 100px;  */
+    /* background-color: #fff; */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+
+}
+
+/* .buttonNavBar{
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    opacity: 90%;
+    /* color: #fff; */
+    /* border: none; */
+    /* border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer; */
+    
+/* } */ 
+
+.btn {
+    border-radius: 999px;
+    padding: 1em 2em;
+    background: linear-gradient(117deg, #00ff75 26%,#3700ff );
+    border: none;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    transition: box-shadow 0.25s ease 0s;
+    letter-spacing: 0.08rem;
+   }
+   
+.btn:hover:focus {
+    background: linear-gradient(117deg, #00ff75,#3700ff);
+    box-shadow: 0 0.1rem 0.8rem rgb(22, 143, 248);
+   }
+
+
+
+/* .buttonBarra{
+    /* background-color: red; */
+    /* opacity: 0.90;
+    border: none;
+    font-size: 14px;
+    background-image: url(https://images.alphacoders.com/641/641547.jpg);
+    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-style: bold; */
+/* } */
+
+input[type="search"] {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+/* .buttonNavBar:hover {
+    background-color: #0055aa;
+  } */
