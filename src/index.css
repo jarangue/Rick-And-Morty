@@ -6,11 +6,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
-  background-image: url(https://images.alphacoders.com/641/641547.jpg);
+  background-image: url("./image/641547\ \(1\).jpg");
+  /* background-image: url(https://images.alphacoders.com/641/641547.jpg); */
   /* https://images8.alphacoders.com/625/625910.png */
   background-repeat: no-repeat;
-  background-size: cover;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  /* background-size: cover; */
   background-position: center;
+ 
   width: 100%;
   height: 100%; 
   /* font-family: Critter, Cottonwood; */

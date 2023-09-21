@@ -2,16 +2,17 @@ import React from "react";
 import style from '../Card/Card.module.css';
 
 export default function Card(props) {
-   const{onClose,name,status,species,gender,origin,image} = props 
+   const{id, onClose,name,status,species,gender,origin,image} = props 
 
    return (
       <div className={style.cardContainer}>
          <div className={style.header}>    
             <div className={style.buttonContainer}>
-               <button className={style.btn} onClick={onClose}>X</button>
+               <button className={style.btn} onClick={() => onClose(id)}>X</button>
             </div> 
-            <img src={image} alt={name} />
-            
+            <div className={style.imgContainer}>
+            <img className={style.characterImg} src={image} alt={name} />
+            </div>
 
          </div>
 

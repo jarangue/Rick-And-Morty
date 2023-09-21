@@ -7,9 +7,10 @@
     height: 100px;  */
     /* background-color: #fff; */
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
   padding: 20px;
   text-align: center;
+
 
 }
 
@@ -22,8 +23,8 @@
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer; */
-    
-/* } */ 
+
+/* } */
 
 .btn {
     border-radius: 999px;
@@ -39,7 +40,7 @@
     transition: box-shadow 0.25s ease 0s;
     letter-spacing: 0.08rem;
    }
-   
+
 .btn:hover:focus {
     background: linear-gradient(117deg, #00ff75,#3700ff);
     box-shadow: 0 0.1rem 0.8rem rgb(22, 143, 248);

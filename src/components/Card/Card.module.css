@@ -1,14 +1,14 @@
-.cardContainer{ 
+.cardContainer{
 
 
   width: 340px;
-  height: 550px;
+  height:480px;
 
   background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
   opacity: 0.95;
 
   border-radius: 10px;
-} 
+}
 
 /* .cardContainer{
   height: 450px;
@@ -32,12 +32,12 @@
 }
 
 img{
-
+  max-width: 100%;
   margin:10px;
   padding: 10px;
   border-radius: 30px;
-  
-  
+
+
 }
 
 .textContainer{
@@ -77,8 +77,15 @@ img{
   /* display: flex; */
   /* flex-direction: column; */
   /* width: 100%; */
-  font-size: 1rem;
+  /* font-size: 1rem; */
+  font-size: 0.8rem;
   
+  /* text-shadow: 2px 2px 4px rgba(10, 243, 26, 0.734); */
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(96, 219, 14, 0.5);
+ 
+  
+
 }
 
 .btn {
@@ -95,7 +102,7 @@ img{
   transition: box-shadow 0.25s ease 0s;
   letter-spacing: 0.08rem;
  }
- 
+
 .btn:hover:focus {
   background: linear-gradient(117deg, #00ff75,#3700ff);
   box-shadow: 0 0.1rem 0.8rem rgb(22, 143, 248);
