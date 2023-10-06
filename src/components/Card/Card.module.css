@@ -31,6 +31,7 @@
 
 }
 
+
 img{
   max-width: 100%;
   margin:10px;
@@ -107,6 +108,23 @@ img{
   background: linear-gradient(117deg, #00ff75,#3700ff);
   box-shadow: 0 0.1rem 0.8rem rgb(22, 143, 248);
  }
+
+ .btn2{
+  background-color: rgb(236, 16, 16);
+ }
+
+ .favContainer{
+  position: absolute;
+ 
+  background-color: rgb(229, 14, 14);
+  width: 35px;
+  right: 300px;
+  top: 5px;
+  border-radius: 999px;
+  font-weight: 500;
+
+ }
+
 
 
 
