@@ -31,7 +31,7 @@ function App() {
    const navigate = useNavigate()
 
    const onSearch = (id) => {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
+      axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
          } else {
