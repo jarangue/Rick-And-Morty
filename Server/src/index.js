@@ -1,35 +1,50 @@
-const http = require ('http')
-// const character = require ('./utils/data')
-const PORT = 3001;
-const {getCharById} = require ('./controllers/getCharById')
+const express = require('express');
+const server = express();
+const router = require('./routes/index')
+const PORT = 3001
 
-http.createServer((req,res) => {
+server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header(
+       'Access-Control-Allow-Headers',
+       'Origin, X-Requested-With, Content-Type, Accept'
+    );
+    res.header(
+       'Access-Control-Allow-Methods',
+       'GET, POST, OPTIONS, PUT, DELETE'
+    );
+    next();
+ });
 
-    res.setHeader('Access-Control-Allow-Origin', '*');
+ server.use(express.json())
 
-    if(req.url.includes('/rickandmorty/character')){
-        //el split separa el string en un array y el at nos da el ultimo elemento
-        // const id = Number(req.url.split('/').at(-1))
-        const id = Number(req.url.split("/").pop());
+ server.use('/rickandmorty', router)
 
-        getCharById(res,Number(id))
+server.listen(PORT, () => {
+    console.log('Server raised in port: ' + PORT);
+ });
 
-    //    //find se utiliza para buscar un elemento en un array que cumpla con una condición específica y devuelve el primer elemento que cumple con esa condición
-    //     let characterFilter = character.find((character) => character.id === Number(id))
 
-        // res.writeHead(200, {'Content-type': 'application/json'});
-        // res.end(JSON.stringify(characterFilter));
+//WEB SERVER
 
-    }
+// const http = require ('http')
+// // const character = require ('./utils/data')
+// const PORT = 3001;
+// const {getCharById} = require ('./controllers/getCharById')
 
-}).listen(PORT,"localHost")
+// http.createServer((req,res) => {
 
-//if (url.includes("/rickandmorty/character")) {
-// Extraer el ID del personaje de la URL
-//const id = Number(url.split("/").pop());
+//     res.setHeader('Access-Control-Allow-Origin', '*');
 
-// Llamar a la función getCharById para obtener los detalles del personaje
-//getCharById(res, Number(id));
-//}
-//})
-//.listen(PORT, "localhost");
+//     if(req.url.includes('/rickandmorty/character')){
+//         //el split separa el string en un array y el at nos da el ultimo elemento
+//         // const id = Number(req.url.split('/').at(-1))
+//         const id = Number(req.url.split("/").pop());
+
+//         getCharById(res,Number(id))
+
+//     }
+
+// }).listen(PORT,"localHost")
+
