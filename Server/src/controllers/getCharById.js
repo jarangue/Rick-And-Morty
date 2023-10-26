@@ -1,7 +1,7 @@
 //EXPRESS
 
 const axios = require('axios')
-const URL = `https://rickandmortyapi.com/api/character/${id}`
+const URL = 'https://rickandmortyapi.com/api/character/'
 
 
 const getCharById = (request,response)=>{

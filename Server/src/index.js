@@ -1,6 +1,7 @@
 const express = require('express');
 const server = express();
 const router = require('./routes/index')
+const morgan = require('morgan')
 const PORT = 3001
 
 server.use((req, res, next) => {
@@ -16,6 +17,8 @@ server.use((req, res, next) => {
     );
     next();
  });
+
+ server.use(morgan('dev'))
 
  server.use(express.json())
 

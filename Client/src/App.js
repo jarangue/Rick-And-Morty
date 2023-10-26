@@ -48,14 +48,23 @@ function App() {
       );
    }
 
-   
-
    const login = (userData) => {
-      if (userData.password === PASSWORD && userData.email === EMAIL) {
-         setAccess(true);
-         navigate('/home');
-      }
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL + `?email=${email}&password=${password}`)
+      .then(({ data }) => {
+         const { access } = data;
+         setAccess(data);
+         access && navigate('/home');
+      });
    }
+
+   // const login = (userData) => {
+   //    if (userData.password === PASSWORD && userData.email === EMAIL) {
+   //       setAccess(true);
+   //       navigate('/home');
+   //    }
+   // }
 
    //Recibe como primer parametro una callback y como segundo parametro un array de dependencias (a quien se esta fijando)
    useEffect(() => {

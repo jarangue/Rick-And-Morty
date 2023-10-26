@@ -10,16 +10,22 @@ const InitialState = {
 const reducer = (state = InitialState, action) =>{
 
     switch(action.type){
+        // case ADD_FAV:
+
+        //     const copyAllCharacters = [...state.allCharacters];
+
+        //     return{
+        //         ...state,
+        //         myFavorites:[...copyAllCharacters,action.payload],
+                
+                
+        //     }
         case ADD_FAV:
-
-            const copyAllCharacters = [...state.allCharacters];
-
-            return{
-                ...state,
-                myFavorites:[...copyAllCharacters,action.payload],
-                
-                
-            }
+            return { 
+                ...state, 
+                myFavorites: action.payload, 
+                allCharacters: action.payload,
+            };
         
         case FILTER:
             let copyFilter = state.allCharacters.filter(
@@ -49,15 +55,21 @@ const reducer = (state = InitialState, action) =>{
             myFavorites: orderFavorites,
         }
       
+        // case REMOVE_FAV:
+
+        //     let deleteCharacter = state.myFavorites.filter(character => character.id !== Number(action.payload))
+
+        //     return{
+        //         ...state,
+        //         myFavorites: deleteCharacter
+
+        //     }
+
         case REMOVE_FAV:
-
-            let deleteCharacter = state.myFavorites.filter(character => character.id !== Number(action.payload))
-
-            return{
+            return { 
                 ...state,
-                myFavorites: deleteCharacter
-
-            }
+                 myFavorites: action.payload,
+            };
         
         
         default:

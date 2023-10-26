@@ -3,7 +3,7 @@ let myFavorites = []
 
 const postFav = (request,response)=>{
 
-    const {character} = request.body
+    const character = request.body
     //pusheamos al arreglo de favoritos 
     myFavorites.push(character)
     return response.status(200).json(myFavorites)
