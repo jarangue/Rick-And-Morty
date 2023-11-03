@@ -9,6 +9,13 @@ export default function SearchBar(props) {
 
    const [id, setId] = useState('');
 
+   // const handleEnter = (event) =>{
+   //    if (event.key === 'Enter'){
+   //       props.onSearch(id);
+   //       setId("")
+   //    } 
+   // }
+
    const handleChange = (evento) => {
       //1- debo capturar la data del imput
       //2- debo guardar esa data en mi ESTADO local id

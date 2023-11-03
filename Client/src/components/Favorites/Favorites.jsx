@@ -6,8 +6,8 @@ import { useDispatch } from "react-redux"
 import {useState} from 'react';
 
 
-const Favorites = (props)=>{
-    const {myFavorites} = props;
+const Favorites = ({myFavorites})=>{
+   //  const {myFavorites} = props;
 
    const[aux,setAux] = useState(false)
     const dispatch = useDispatch()
@@ -22,12 +22,14 @@ const Favorites = (props)=>{
     }
 
     return (
-        <div className={style.wrapperContainer}>
+      <div>
+        <div className={style.wrapperContainer}></div>
          <h1>My Favorites</h1>
 
+       <div>
          <select onChange={handleOrder}>
-            <option value='A'>Ascendente</option>
-            <option value='D'>Descendente</option>
+            <option value="A">Ascendente</option>
+            <option value="D">Descendente</option>
          </select>
 
          <select onChange={handleFilter}>
@@ -36,8 +38,10 @@ const Favorites = (props)=>{
             <option value="Genderless">Genderles</option>
             <option value="unknown">unknown</option>
          </select>
-
-        {myFavorites.map((character) => {
+         </div>
+       
+       <div>
+        {myFavorites?.map((character) => {
 
             return (
                
@@ -50,13 +54,14 @@ const Favorites = (props)=>{
                   gender={character.gender}
                   origin={character.origin.name}
                   image={character.image}
-                //  onClose={onClose}
+                  // onClose={onClose}
                />
                
             )
    
          })}
          </div>
+      </div>
     )
 }
 

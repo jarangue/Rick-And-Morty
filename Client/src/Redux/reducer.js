@@ -49,11 +49,11 @@ const reducer = (state = InitialState, action) =>{
             } else if (action.payload === 'D') {
                 orderFavorites.sort((a, b) => b.id - a.id); // Orden descendente
             }
-          
-        return {
-            ...state,
-            myFavorites: orderFavorites,
-        }
+         
+            return {
+                ...state,
+                myFavorites: orderFavorites,
+            }
       
         // case REMOVE_FAV:
 
@@ -70,7 +70,14 @@ const reducer = (state = InitialState, action) =>{
                 ...state,
                  myFavorites: action.payload,
             };
-        
+
+        // case REMOVE_COMPONENT_FAVORITES:
+        //     const removeFavorite = state.myFavorites.filter((char)=> char.id !== Number(action.payload))
+            
+        //     return{
+        //         ...state,
+        //         myFavorites: removeFavorite
+        //     }
         
         default:
             return{

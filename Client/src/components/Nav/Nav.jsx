@@ -1,6 +1,7 @@
 import SearchBar from '../SearchBar/SearchBar';
-import {NavLink} from "react-router-dom";
+import {NavLink, useLocation} from "react-router-dom";
 import style from "../Nav/Nav.module.css"
+
 
 
 
@@ -8,9 +9,14 @@ const Nav = (props) =>{
 
     const {onSearch} = props
 
+    const { pathname } = useLocation()
+
     return(
         <div className={style.navBar}>
                 <div className={style.containerBoton}>
+
+              
+               
                <NavLink to="/about">
                     <button className={style.btn}>About</button>
                  </NavLink>
@@ -21,8 +27,12 @@ const Nav = (props) =>{
                     <button className={style.btn}>Favorites</button>
                  </NavLink>
                  </div>
+
+                 {
+                  pathname.includes("/home") && <SearchBar onSearch={onSearch}/>
+               }
                 
-                 <SearchBar onSearch={onSearch}/>
+                 {/* <SearchBar onSearch={onSearch}/> */}
              
         </div>
     )
