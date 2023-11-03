@@ -1,45 +1,73 @@
 //EXPRESS
 
+// const axios = require('axios')
+// const URL = 'https://rickandmortyapi.com/api/character/'
+
+
+// const getCharById = (request,response)=>{
+
+//     const { id } = request.params
+
+//     axios(`${URL}${id}`)
+//     .then((response)=> response.data)
+
+//     .then((data)=>{ //data tiene toda la info que necesitamos 
+
+//         const character = {
+//             id: data.id,
+//             status: data.status, 
+//             name: data.name, 
+//             species: data.species, 
+//             origin: data.origin?.name, 
+//             image: data.image,
+//             gender: data.gender,
+//         }
+
+//         if(character.name){
+//             response.status(200).json(character); //Envia el personaje como respuesta
+//         }
+//         else{
+//             response.status(404).send('Not found'); // Enviar el mensaje de error 404 si el personaje no se encuentra
+//         }
+        
+//     })
+
+//     .catch((error)=>{
+//         return response.status(500).send({message: error.message})
+//     })
+// }
+
+
+
+// module.exports = getCharById
+
+
+//ASYNC AWAIT
+
 const axios = require('axios')
 const URL = 'https://rickandmortyapi.com/api/character/'
 
 
-const getCharById = (request,response)=>{
+const getCharById = async (req, res) => {
+    const { id } = req.params;
+  
+    try {
+      const response = await axios(`${URL}${id}`);
+      const { name, status, species, gender, origin, image } = response.data;
+  
+      const character = { id, name, status, species, gender, origin, image };
+  
+      return character.name
+        ? res.status(200).json(character)
+        : res.status(404).send('Not Found');
+    } catch (error) {
+      return res.status(500).send(error.message);
+    }
+  };
 
-    const { id } = request.params
-
-    axios(`${URL}${id}`)
-    .then((response)=> response.data)
-
-    .then((data)=>{ //data tiene toda la info que necesitamos 
-
-        const character = {
-            id: data.id,
-            status: data.status, 
-            name: data.name, 
-            species: data.species, 
-            origin: data.origin?.name, 
-            image: data.image,
-            gender: data.gender,
-        }
-
-        if(character.name){
-            response.status(200).json(character); //Envia el personaje como respuesta
-        }
-        else{
-            response.status(404).send('Not found'); // Enviar el mensaje de error 404 si el personaje no se encuentra
-        }
-        
-    })
-
-    .catch((error)=>{
-        return response.status(500).send(error.message)
-    })
+module.exports = {
+    getCharById
 }
-
-
-
-module.exports = getCharById
 
 //WEB SERVER
 
