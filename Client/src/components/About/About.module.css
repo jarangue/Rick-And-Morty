@@ -1,3 +1,12 @@
-.text{
-    color: red
-}
+.text {
+    font-size: 18px;
+    color: black;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  h3 {
+    font-size: 16px;
+    color: black;
+    margin-top: 10px;
+  }
