@@ -67,7 +67,7 @@ describe("Test de RUTAS", () => {
    
 
     describe("DELETE /rickandmorty/fav/:id", () => {
-      const char1 = { id: "1", name: "Javier" };
+      const char1 = { id: "1", name: "Javier" };   
       const char2 = { id: "2", name: "Lucas" };
 
       it("Devuelve el arreglo si no se elimina ningun persona", async () => {
