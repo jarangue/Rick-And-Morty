@@ -1,12 +1,9 @@
 .wrapperContainer{
-    /* background-color: aqua; */
+   
     display:flex;
     flex-wrap: wrap;
     justify-content:center;
     max-width: 100%;
-    gap: 10px;
-    
-
-    
+    gap: 10px;    
 }
 

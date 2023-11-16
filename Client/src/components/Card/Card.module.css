@@ -75,13 +75,8 @@ img{
 
 
 .info{
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* width: 100%; */
-  /* font-size: 1rem; */
-  font-size: 0.8rem;
   
-  /* text-shadow: 2px 2px 4px rgba(10, 243, 26, 0.734); */
+  font-size: 0.8rem;
   letter-spacing: 1px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(96, 219, 14, 0.5);
  

@@ -1,4 +1,4 @@
-import {ADD_FAV, REMOVE_FAV, FILTER, ORDER} from './action-types'
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER } from "./actions";
 
 
 const InitialState = {
@@ -10,16 +10,7 @@ const InitialState = {
 const reducer = (state = InitialState, action) =>{
 
     switch(action.type){
-        // case ADD_FAV:
-
-        //     const copyAllCharacters = [...state.allCharacters];
-
-        //     return{
-        //         ...state,
-        //         myFavorites:[...copyAllCharacters,action.payload],
-                
-                
-        //     }
+       
         case ADD_FAV:
             return { 
                 ...state, 
@@ -38,10 +29,8 @@ const reducer = (state = InitialState, action) =>{
             }
             
         case ORDER:
-                // Crea una copia de myFavorites
+               
             const orderFavorites = [...state.myFavorites];
-          
-                // Ordena los personajes según su id en orden ascendente o descendente
 
             if (action.payload === 'A') {
                 orderFavorites.sort((a, b) => a.id - b.id); // Orden ascendente
@@ -55,29 +44,13 @@ const reducer = (state = InitialState, action) =>{
                 myFavorites: orderFavorites,
             }
       
-        // case REMOVE_FAV:
-
-        //     let deleteCharacter = state.myFavorites.filter(character => character.id !== Number(action.payload))
-
-        //     return{
-        //         ...state,
-        //         myFavorites: deleteCharacter
-
-        //     }
-
+    
         case REMOVE_FAV:
             return { 
                 ...state,
                  myFavorites: action.payload,
             };
 
-        // case REMOVE_COMPONENT_FAVORITES:
-        //     const removeFavorite = state.myFavorites.filter((char)=> char.id !== Number(action.payload))
-            
-        //     return{
-        //         ...state,
-        //         myFavorites: removeFavorite
-        //     }
         
         default:
             return{

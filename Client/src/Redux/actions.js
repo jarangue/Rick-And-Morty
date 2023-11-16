@@ -1,37 +1,20 @@
-import {ADD_FAV, FILTER, ORDER, REMOVE_FAV} from './action-types'
 import axios from "axios"
 
+export const ADD_FAV = "ADD_FAV"
 
-// export const addFav = (character) =>{
-//     return{
-//         type: ADD_FAV,
-//         payload: character
+export const REMOVE_FAV = "REMOVE_FAV"
 
-//     }
-// }
+export const FILTER = "FILTER"
 
-//!Con express o promesas 
+export const ORDER = "ORDER"
 
-// export const addFav = (character) => {
-//     const endpoint = 'http://localhost:3001/rickandmorty/fav';
-//     return (dispatch) => {
-//        axios.post(endpoint, character)
-//        .then(({ data }) => {
-//           return dispatch({
-//                type: ADD_FAV,
-//                payload: data,
-//           });
-//        });
-//     };
-//  };
-
-//!Con async-await
 export const addFav = (character) => {
    
    const endpoint = 'http://localhost:3001/rickandmorty/fav';
    return async (dispatch) => {
       try {
         const {data} = await axios.post(endpoint, character)
+        console.log("Lo que quieras", data);
         return dispatch({
          type: ADD_FAV,
          payload: data,
@@ -43,37 +26,13 @@ export const addFav = (character) => {
    } 
 };
 
- 
-
-// export const removeFav= (id) => {
-//     return{
-//         type: REMOVE_FAV,
-//         payload: id,
-//     }
-// }
-
-//!Con express
-// export const removeFav = (id) => {
-//     const endpoint = 'http://localhost:3001/rickandmorty/fav/' + id;
-//     return (dispatch) => {
-//       axios.delete(endpoint)
-//        .then(({ data }) => {
-//           return dispatch({
-//              type: REMOVE_FAV,
-//              payload: data,
-//           });
-//        });
-//     };
-//  };
-
-//Con async - await
  export const removeFav = (id) => {
-
+   
       try {
          const endpoint = 'http://localhost:3001/rickandmorty/fav/' + id;
          return async (dispatch) => {
-            
-            const {data} = axios.delete(endpoint)
+           
+            const {data} = await axios.delete(endpoint)
          
             return dispatch({
                type: REMOVE_FAV,
@@ -99,9 +58,3 @@ export const orderCards = (order)=>{
     }
 }
 
-// export const removeComponentFavorites= (id)=>{
-//    return {
-//       type: REMOVE_COMPONENT_FAVORITES,
-//       payload: id
-//    }
-// }

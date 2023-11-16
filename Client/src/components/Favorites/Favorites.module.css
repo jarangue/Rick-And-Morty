@@ -1,11 +1,17 @@
 .wrapperContainer{
-    /* background-color: aqua; */
+    background-color: aqua;
     display:flex;
     flex-wrap: wrap;
     justify-content:center;
     max-width: 100%;
     gap: 10px;
     
+}
 
-    
+.cardContainer{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    max-width: 100%;
+    gap: 10px; 
 }

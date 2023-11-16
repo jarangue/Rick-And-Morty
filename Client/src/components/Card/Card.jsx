@@ -6,38 +6,34 @@ import {addFav, removeFav} from '../../Redux/actions'
 import { useState, useEffect  } from "react";
 
 
-
  function Card(props) {
-   const{id, onClose,name,status,species,gender,origin,image, addFav, removeFav, myFavorites} = props
+   const{id, onClose,name,status,species,gender,origin,image} = props
 
    const [isFav, setIsFav] = useState(false);
 
-   useEffect(() => {
-      myFavorites.forEach((fav) => {
-         if (fav.id === props.id) {
-            setIsFav(true);
-         }
-      });
-   }, [myFavorites]);
-
-   const handleFavorite = (evento) =>{
-      //Si isFav es true removemos el personaje 
-      // isFav ? removeFav(id) : addFav(props)
-      // setIsFav(!isFav)
-
+   const handleFavorite = () =>{
+     
       if(isFav){
          setIsFav(false)
-         removeFav(id)
+         props.removeFav(id)
       }
       else{
          setIsFav(true)
-         addFav(props)
+         props.addFav(props)
          
       }
-
-
-
    }
+
+ 
+   useEffect(() => {
+      if (props.myFavorites && Array.isArray(props.myFavorites)) {
+         props.myFavorites.forEach((fav) => {
+            if (fav.id === id) {
+               setIsFav(true);
+            }
+         });
+      }
+   }, [props.myFavorites, id]);
 
    return (
       <div className={style.cardContainer}>
@@ -95,7 +91,7 @@ const mapStateToProps = (state) =>{
 const mapDispatchToProps = (dispatch) => {
    return {
       addFav : (character) => {dispatch(addFav(character))},
-      removeFav : (id) => {dispatch(removeFav(id))}
+      removeFav : (id) => dispatch(removeFav(id)),
    }
 }
 

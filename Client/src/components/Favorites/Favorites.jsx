@@ -1,7 +1,7 @@
 import {connect} from "react-redux"
 import Card from "../Card/Card"
 import style from "../Favorites/Favorites.module.css"
-import { filterCards, orderCards } from "../../Redux/actions"
+import { filterCards, orderCards, removeFav } from "../../Redux/actions"
 import { useDispatch } from "react-redux"
 import {useState} from 'react';
 
@@ -12,13 +12,24 @@ const Favorites = ({myFavorites})=>{
    const[aux,setAux] = useState(false)
     const dispatch = useDispatch()
 
-    const handleOrder = (e) => {
-      dispatch(orderCards(e.target.value))
-      setAux(!aux)
+    const handleOrder = (event) => {
+      dispatch(orderCards(event.target.value));
+      aux === true ? setAux(false) : setAux(true);
+      
+      
     }
 
     const handleFilter = (e) => {
-      dispatch(filterCards(e.target.value))
+     
+      if (e.target.value === "Todos") {
+         dispatch(filterCards(null));
+       } else {
+         dispatch(filterCards(e.target.value));
+       }
+    }
+
+    const removeFavorite = (id) =>{
+      dispatch(removeFav(id));
     }
 
     return (
@@ -28,11 +39,13 @@ const Favorites = ({myFavorites})=>{
 
        <div>
          <select onChange={handleOrder}>
+            <option value="Todos">Orden</option>
             <option value="A">Ascendente</option>
             <option value="D">Descendente</option>
          </select>
 
          <select onChange={handleFilter}>
+            <option value="Todos">Todos los Generos</option>
             <option value="Male">Male</option>
             <option value="Female">Female</option>
             <option value="Genderless">Genderles</option>
@@ -40,7 +53,7 @@ const Favorites = ({myFavorites})=>{
          </select>
          </div>
        
-       <div>
+       <div className={style.cardContainer}>
         {myFavorites?.map((character) => {
 
             return (
@@ -54,7 +67,7 @@ const Favorites = ({myFavorites})=>{
                   gender={character.gender}
                   origin={character.origin.name}
                   image={character.image}
-                  // onClose={onClose}
+                  onClose={() => removeFavorite(character.id)}
                />
                
             )
@@ -65,10 +78,10 @@ const Favorites = ({myFavorites})=>{
     )
 }
 
-const mapStateToProps = (state) =>{
-    return{
+const mapStateToProps = (state) =>({
+    
        myFavorites: state.myFavorites,
-    }
- }
+    
+ })
 
 export default connect (mapStateToProps, null)(Favorites)
