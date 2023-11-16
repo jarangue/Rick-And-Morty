@@ -1,4 +1,4 @@
-const { all } = require('axios');
+// const { all } = require('axios');
 const { DataTypes } = require('sequelize');
 
 module.exports = (sequelize) => {
@@ -7,6 +7,7 @@ module.exports = (sequelize) => {
          type: DataTypes.INTEGER,
          allowNull: false,
          primaryKey: true,
+         autoIncrement: true
       },
       name:{
          type: DataTypes.STRING,
