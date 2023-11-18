@@ -20,31 +20,30 @@ const Detail = () => {
         return setCharacter({});
      }, [id]);
 
-    return(
-
+     return (
         <div className={style.container}>
-
-            {/* character ? ( */}
+            {character.name && (
                 <div className={style.text}>
-                    <img src={character.image} alt = {character.image}/>
-                    <h2> Name: {character.name}</h2>
-                    <h2> Status: {character.status}</h2>
-                    <h2> Species: {character.species}</h2>
-                    <h2> Gender: {character.gender}</h2>
-                    <h2> Origin: {character.origin?.name}</h2>
+                    <div className={style.content}>
+                        <div className={style.info}>
+                            <h2>Name: {character.name}</h2>
+                            <h2>Status: {character.status}</h2>
+                            <h2>Species: {character.species}</h2>
+                            <h2>Gender: {character.gender}</h2>
+                            <h2>Origin: {character.origin?.name}</h2>
+                        </div>
+                        <div className={style.imageContainer}>
+                            <img
+                                src={character.image}
+                                alt={character.image}
+                                className={style.roundedImage}
+                            />
+                        </div>
+                    </div>
                 </div>
-            {/* )
-             : (
-                ""
-             ) */}
-
+            )}
         </div>
-        
-
-            
-
-       
-    )
+    );
 
 }
 

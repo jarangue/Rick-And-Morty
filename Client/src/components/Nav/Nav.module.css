@@ -1,27 +1,29 @@
 
 .navBar {
     display: flex;
-    justify-content: space-between; /* Espacio entre la barra de búsqueda y los botones */
-    align-items: center; /* Centrar verticalmente los elementos */
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
-    background-color: #333 100%; /* Cambia el color de fondo según tu diseño */
-    color: white; /* Cambia el color del texto según tu diseño */
-  }
-  
+    background-color: #333 100%;
+    color: white;
+}
+
+.navBar a {
+  text-decoration: none;
+  margin-left: 20px;
+}
+
 .containerBoton {
     display: flex;
     align-items: center;
-    flex-grow: 1.5; /* Esto hace que el contenedor de botones ocupe todo el espacio disponible */
+    flex-grow: 1.5;
     justify-content: center;
   }
-  
-
-  
 
   .btn {
     border-radius: 999px;
     padding: 1em 2em;
-    margin: 10px;
+    margin: 15px;
     background: linear-gradient(117deg, #00ff75 26%,#3700ff );
     border: none;
     color: rgb(255, 255, 255);
@@ -33,12 +35,13 @@
     transition: box-shadow 0.25s ease 0s;
     letter-spacing: 0.08rem;
     display:flex;
-    /* text-decoration: none; */
+    text-align: center;
+
 
    }
 
 .btn:hover:focus {
-    background: linear-gradient(117deg, #00ff75,#3700ff);
+    background: linear-gradient(117deg, #ddc318,#3700ff);
     box-shadow: 0 0.1rem 0.8rem rgb(22, 143, 248);
     text-decoration: none;
    }
@@ -46,26 +49,3 @@
 
 
 
-
-/* .boton {
-    border-radius: 999px;
-    padding: 1em 2em;
-    background: linear-gradient(117deg, #00ff75 26%,#3700ff );
-    border: none;
-    color: rgb(255, 255, 255);
-    font-size: 1rem;
-    text-transform: uppercase;
-    font-family: inherit;
-    font-weight: 500;
-    cursor: pointer;
-    transition: box-shadow 0.25s ease 0s;
-    letter-spacing: 0.08rem;
-    
-    text-align:left
-
-   }
-
-.boton:hover:focus {
-    background: linear-gradient(117deg, #00ff75,#3700ff);
-    box-shadow: 0 0.1rem 0.8rem rgb(22, 143, 248);
-   } */

@@ -6,8 +6,6 @@
   padding: 20px;
 }
 
-
-
 .btn {
     border-radius: 999px;
     padding: 1em 2em;
@@ -26,25 +24,10 @@
    }
 
 .btn:hover:focus {
-    background: linear-gradient(117deg, #00ff75,#3700ff);
+    background: linear-gradient(117deg, #fafa50,#3700ff);
     box-shadow: 0 0.1rem 0.8rem rgb(22, 143, 248);
    }
 
-
-
-/* .buttonBarra{
-    /* background-color: red; */
-    /* opacity: 0.90;
-    border: none;
-    font-size: 14px;
-    background-image: url(https://images.alphacoders.com/641/641547.jpg);
-    background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
-    border-radius: 4px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    font-style: bold; */
-/* } */
 
 input[type="search"] {
     width: 300px;
@@ -53,8 +36,6 @@ input[type="search"] {
     border-radius: 4px;
     font-size: 16px;
     margin-right: 10px;
+    text-decoration: none;
   }
 
-/* .buttonNavBar:hover {
-    background-color: #0055aa;
-  } */

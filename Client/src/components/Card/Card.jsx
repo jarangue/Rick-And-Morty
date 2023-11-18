@@ -42,7 +42,7 @@ import { useState, useEffect  } from "react";
          <div className={style.favContainer}>
                {
                isFav ? (
-                     <button className={style.btn2}onClick={handleFavorite}>❤️</button>
+                     <button className={style.btn2}onClick={handleFavorite}> ❤️ </button>
                      ) : (
                      <button className={style.btn2} onClick={handleFavorite}>🤍</button>
                   )

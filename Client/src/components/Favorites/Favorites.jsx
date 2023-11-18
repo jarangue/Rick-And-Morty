@@ -34,9 +34,9 @@ const Favorites = ({myFavorites})=>{
 
     return (
       <div>
-        <div className={style.wrapperContainer}></div>
-         <h1>My Favorites</h1>
-
+        <div className={style.wrapperContainer}>
+         <h1>Mis favoritos</h1>
+         </div>
        <div>
          <select onChange={handleOrder}>
             <option value="Todos">Orden</option>

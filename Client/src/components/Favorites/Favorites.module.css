@@ -1,11 +1,17 @@
 .wrapperContainer{
-    background-color: aqua;
     display:flex;
     flex-wrap: wrap;
     justify-content:center;
     max-width: 100%;
     gap: 10px;
-    
+}
+
+.wrapperContainer h1{
+    margin-bottom: 10px;
+    color: white;
+    font-size: 30px;
+    font-family: fantasy;
+    text-shadow: 2px 2px 4px rgb(7, 234, 7);
 }
 
 .cardContainer{
@@ -13,5 +19,12 @@
     flex-wrap: wrap;
     justify-content:center;
     max-width: 100%;
-    gap: 10px; 
+    gap: 15px; 
+    margin-top: 10px;
 }
+
+select {
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #007bffe8
+  }

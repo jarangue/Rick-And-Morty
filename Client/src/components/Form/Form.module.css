@@ -5,12 +5,9 @@
     align-items: center;
     justify-content: center;
     padding: 20px;
-
     background-image: url("https://e0.pxfuel.com/wallpapers/503/477/desktop-wallpaper-rick-y-morty-iphone-rick-morty-poster-rick-con-respecto-iphone-rick-and-morty-rick-and-morty-fan-art.jpg");
     background-repeat: no-repeat;
-
     background-size: 100% 100%;
-  
     border: 1px solid #ccc;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -29,12 +26,7 @@
     /* text-align: center; */
    
 } 
-/* 
-.logInTitle{
-  position: absolute;
-  top:-100px;
-  
-} */
+
 
 .logInContainer p{
   color: white;
@@ -68,9 +60,6 @@ label {
   color: white;
 
 }
-
-
-
 
 input {
     width: calc(100% - 10px);

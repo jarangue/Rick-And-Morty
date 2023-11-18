@@ -9,12 +9,7 @@ export default function SearchBar(props) {
 
    const [id, setId] = useState('');
 
-   // const handleEnter = (event) =>{
-   //    if (event.key === 'Enter'){
-   //       props.onSearch(id);
-   //       setId("")
-   //    } 
-   // }
+  
 
    const handleChange = (evento) => {
       //1- debo capturar la data del imput
@@ -25,9 +20,9 @@ export default function SearchBar(props) {
 
    return (
       <div className={style.navBar}>
-         <input type='search' placeholder='Busca un personaje' onChange={handleChange} value={id}/>
+         <input type='search' placeholder='Busca un personaje...' onChange={handleChange} value={id}/>
          <div className={style.buttonNavBar}>
-         <button className={style.btn} onClick={()=> onSearch(id)}>Agregar</button>
+         <button className={style.btn} onClick={()=> onSearch(id)}> Agregar </button>
          </div>
       </div>
    );
