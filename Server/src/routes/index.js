@@ -17,7 +17,7 @@ router.get("/character/:id", getCharById)
 
 router.get("/login", login)
 
-router.get("/logout", logout)
+router.get("/logout/", logout)
 
 router.post("/login", postUser)
 
